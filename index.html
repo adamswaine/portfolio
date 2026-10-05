@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Adam Swaine — Business Systems Analyst</title>
-<meta name="description" content="Adam Swaine is a business systems analyst specialising in helpdesk and ITSM systems, automation and AI-powered internal tooling.">
+<meta name="description" content="Adam Swaine is a London-based business systems analyst who turns operational problems into process changes, automation and AI tools that teams actually use.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -441,6 +441,35 @@
     color:var(--accent);
   }
 
+  /* ---------- STRENGTHS ---------- */
+  .strength-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+  }
+  .strength-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px;
+  }
+  .strength-card h3{
+    font-size:1.15rem;
+    margin-bottom:10px;
+  }
+  .strength-card p{
+    font-size:0.95rem;
+    color:var(--slate);
+  }
+  .strength-card .proof{
+    margin-top:16px;
+    padding-top:16px;
+    border-top:1px solid var(--line);
+    font-size:0.93rem;
+    font-weight:500;
+    color:var(--accent);
+  }
+
   /* ---------- TIMELINE ---------- */
   .timeline-list{
     border-left:2px solid var(--line);
@@ -599,6 +628,8 @@
     .process-item{border-right:none; border-bottom:1px solid var(--line);}
     .process-item:nth-child(2){border-right:none;}
     .case-grid{grid-template-columns:1fr;}
+    .strength-grid{grid-template-columns:1fr;}
+    .stats .wrap{grid-template-columns:1fr 1fr;}
     .skills-grid{grid-template-columns:1fr 1fr;}
     .contact .wrap{grid-template-columns:1fr; gap:30px;}
   }
@@ -624,7 +655,8 @@
   <div class="wrap">
     <div class="brand">ADAM<span>·</span>SWAINE</div>
     <nav class="links">
-      <a href="#services">Services</a>
+      <a href="#strengths">What I bring</a>
+      <a href="#services">How I work</a>
       <a href="#work">Work</a>
       <a href="#skills">Skills</a>
       <a href="#contact" class="cta">Get in touch</a>
@@ -642,14 +674,36 @@
   <section class="hero">
     <div class="wrap">
       <div class="hero-content">
-        <p class="eyebrow">Business Systems Analyst</p>
-        <h1>Helpdesk and IT systems, automated end to end.</h1>
-        <p class="lede">I'm Adam Swaine. I spent years on the frontline of enterprise IT support — long enough to know where the real problems are hiding — then started designing and building the tools that fix them: automations, AI features and platform redesigns that take manual work off people's plates.</p>
-        <p class="meta-line">7+ YEARS · ENTERPRISE SYSTEMS · LONDON, UK</p>
+        <p class="eyebrow">Business Systems Analyst · AI &amp; Automation</p>
+        <h1>I turn messy operations into systems people actually use.</h1>
+        <p class="lede">I'm Adam Swaine. I started on the frontline, so I know where work really gets stuck. Now I find the problem, build the case for fixing it, and see the fix through to launch: process redesigns, automations and AI tools that take manual work off people's plates.</p>
+        <p class="meta-line">13 YEARS IN OPERATIONS &amp; SYSTEMS · LONDON, UK</p>
         <div class="cta-row">
           <a class="btn primary" href="mailto:adamswaine1991@icloud.com">Email me</a>
           <a class="btn secondary" href="https://www.linkedin.com/in/adamswaine/" target="_blank" rel="noopener">View LinkedIn</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats" aria-label="Results at a glance">
+    <div class="wrap">
+      <div>
+        <p class="stat-num">$4.1M</p>
+        <p class="stat-label">projected annual saving from a self-service redesign I led</p>
+      </div>
+      <div>
+        <p class="stat-num">2mo → 2wk</p>
+        <p class="stat-label">time to deliver workflow changes after I redesigned the process</p>
+      </div>
+      <div>
+        <p class="stat-num">80</p>
+        <p class="stat-label">changes and fixes shipped to production in six months</p>
+      </div>
+      <div>
+        <p class="stat-num">10/10</p>
+        <p class="stat-label">the only perfect score at the organisation's hackathon, for an AI app I built</p>
       </div>
     </div>
   </section>
@@ -662,8 +716,42 @@
         <h2>Operational reality,<br>turned into working systems.</h2>
       </div>
       <div class="reveal">
-        <p>For the last seven years I've worked inside one of the world's largest enterprise IT environments — most recently as a Business Systems Analyst for a ~300-person global Helpdesk organisation. I own systems strategy, requirements and delivery coordination across platform, identity and security, AI integration and operational automation.</p>
-        <p>Where the team needed a tool that didn't exist, I built it myself. My most recent project is a full-stack, AI-powered application I designed and shipped without a traditional engineering background — it will handle 400+ submissions a year. I'm at my best translating the day-to-day reality of operational teams into systems, automations and AI tooling that people actually want to use.</p>
+        <p>I spent seven years at Meta, most recently as a Business Systems Analyst for a 300+ person global support organisation. I owned requirements, the improvement backlog and sprint delivery for its core platform, and led work spanning AI features, automation, process redesign and security.</p>
+        <p>The setting was enterprise support, but the work travels: understanding how a team really operates, finding where time is lost, making a data-backed case for change, and staying with it until people rely on what was built. Where a tool didn't exist, I built it myself, including a full-stack AI application, shipped without an engineering background, that became the standard intake tool for 300+ people.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRENGTHS -->
+  <section class="strengths" id="strengths">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What I bring</p>
+        <h2>What I bring to a team.</h2>
+        <p>Four things I do well, wherever the work happens to be.</p>
+      </div>
+
+      <div class="strength-grid">
+        <div class="strength-card reveal">
+          <h3>I speak operations and engineering</h3>
+          <p>I turn what frontline teams describe into requirements that engineers and vendors can build from, and catch the gaps before launch rather than after.</p>
+          <p class="proof">Unblocked 151 test tasks to land a major platform migration on time.</p>
+        </div>
+        <div class="strength-card reveal">
+          <h3>I make the case with numbers</h3>
+          <p>Before anything gets built, I model the cost and impact, so decisions rest on evidence rather than whoever argues loudest.</p>
+          <p class="proof">Built the case for a self-service redesign projected to save $4.1M a year.</p>
+        </div>
+        <div class="strength-card reveal">
+          <h3>I don't wait in the build queue</h3>
+          <p>When a small tool or automation would solve the problem, I build it myself, from idea to working software, without needing a dedicated engineering team.</p>
+          <p class="proof">Shipped a full-stack AI app as a non-engineer, now used by 300+ people.</p>
+        </div>
+        <div class="strength-card reveal">
+          <h3>I stay until it's used</h3>
+          <p>Launch isn't the finish line. I run demos, training and feedback loops until the new way of working is the normal one.</p>
+          <p class="proof">Redesigned project intake: submissions up 109%, then up a further 76%.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -674,7 +762,7 @@
       <div class="section-head">
         <p class="eyebrow">How I work</p>
         <h2>Four stages, one outcome: less manual work.</h2>
-        <p>This is the same process I run internally, applied to any system that's outgrown how it was originally built.</p>
+        <p>The same process works whether the problem is a support queue, a sales workflow or a finance hand-off.</p>
       </div>
 
       <div class="process-list reveal">
@@ -701,8 +789,8 @@
       </div>
 
       <div class="services-line reveal">
-        <span class="label">Typical engagements cover</span>
-        Helpdesk &amp; ITSM systems analysis · AI-powered internal tooling · Identity &amp; access workflow design · Vendor evaluation &amp; build-vs-buy modelling · Salesforce Service Cloud configuration · Sprint &amp; delivery management
+        <span class="label">Where I can help</span>
+        Process discovery &amp; mapping · Requirements &amp; business cases · AI adoption &amp; internal tooling · Workflow automation · Vendor evaluation &amp; build-vs-buy · Delivery &amp; change management
       </div>
     </div>
   </section>
@@ -712,8 +800,8 @@
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Selected work</p>
-        <h2>Four problems, handled.</h2>
-        <p>A sample of the systems and automation work I deliver day to day.</p>
+        <h2>Five problems, handled.</h2>
+        <p>Each one started with a team losing time or money. The setting was enterprise support; the approach works anywhere.</p>
       </div>
 
       <div class="case-grid">
@@ -722,16 +810,16 @@
             <span class="case-id mono">CASE-01</span>
             <span class="case-tag">Adopted</span>
           </div>
-          <h3>The case for a new ticketing platform</h3>
+          <h3>A two-month change process, cut to two weeks</h3>
           <div class="field">
             <span class="field-label">Problem</span>
-            <span class="field-value">Our internal ticketing tool was unstructured and gave the business almost no usable data — no consistent taxonomy, and very little visibility into ticket quality or volume.</span>
+            <span class="field-value">Every workflow change went through a hand-off chain of around ten people. Changes took two months on average, and some took six.</span>
           </div>
           <div class="field">
             <span class="field-label">What I did</span>
-            <span class="field-value">Researched the enterprise ticketing and case-management market, evaluated options against taxonomy and data fidelity, then presented leadership with a recommendation for standardising the IT experience, improving insight for our QA team, and lifting technician efficiency.</span>
+            <span class="field-value">Mapped the chain, removed the hand-offs that added no value, and made changes directly where I could, updating 11 workflows myself.</span>
           </div>
-          <p class="result">Became the foundation for our move to Salesforce Service Cloud, including the requirements and workflow specs that shaped how it was built.</p>
+          <p class="result">Average turnaround down from 2 months to 2 weeks, some same-day. Named a top-5 accomplishment for the organisation.</p>
         </div>
 
         <div class="case-card reveal">
@@ -739,48 +827,65 @@
             <span class="case-id mono">CASE-02</span>
             <span class="case-tag">Shipped</span>
           </div>
-          <h3>AI-powered project intake tool</h3>
+          <h3>Shipping an AI tool without an engineering team</h3>
           <div class="field">
             <span class="field-label">Problem</span>
-            <span class="field-value">400+ project ideas a year arrived through an unstructured process, with duplicate submissions and slow routing.</span>
+            <span class="field-value">Hundreds of project ideas a year arrived through an unstructured process, with duplicate submissions and slow routing.</span>
           </div>
           <div class="field">
             <span class="field-label">What I did</span>
-            <span class="field-value">Designed and built a full-stack AI application from scratch — no engineering support — using LLM-driven semantic search for duplicate detection, AI-generated one-pagers, and intelligent routing.</span>
+            <span class="field-value">Designed and built a full-stack AI application with no engineering support, using LLM-driven semantic search for duplicate detection, AI-generated one-pagers and automatic routing.</span>
           </div>
-          <p class="result">Already used by 300+ people, on track to handle 400+ submissions a year.</p>
+          <p class="result">The standard intake tool for 300+ people, handling 400+ submissions a year, and the only perfect 10/10 at the organisation's hackathon.</p>
         </div>
 
         <div class="case-card reveal">
           <div class="case-top">
             <span class="case-id mono">CASE-03</span>
-            <span class="case-tag">Ongoing</span>
+            <span class="case-tag">Adopted</span>
           </div>
-          <h3>Running the continuous improvement pipeline</h3>
+          <h3>A $4.1M case for self-service</h3>
           <div class="field">
             <span class="field-label">Problem</span>
-            <span class="field-value">Every enhancement request — through the intake tool or otherwise — needs its impact validated, prioritised against engineering capacity, and tested before release, or the backlog turns into noise instead of progress.</span>
+            <span class="field-value">A new self-service portal needed a structure customers could find their way around, or simple requests would keep landing with the support team.</span>
           </div>
           <div class="field">
-            <span class="field-label">What I do</span>
-            <span class="field-value">Validate the business impact of projects submitted through my intake tool, work with engineering to prioritise what gets built next, then partner with business stakeholders on testing and release.</span>
+            <span class="field-label">What I did</span>
+            <span class="field-value">Kicked off and led the team that designed the portal's customer-facing taxonomy, validated it with UX research, and measured the result after launch.</span>
           </div>
-          <p class="result">Runs as a continuous cycle — 29 production changes shipped through it in Q1 2026 alone.</p>
+          <p class="result">Self-service deflection up 32.4% and cases per employee down 21.3%, a projected $4.1M a year in efficiency gains.</p>
         </div>
 
         <div class="case-card reveal">
           <div class="case-top">
             <span class="case-id mono">CASE-04</span>
-            <span class="case-tag">In rollout</span>
+            <span class="case-tag">Delivered</span>
           </div>
-          <h3>AI features for a 300-person helpdesk</h3>
+          <h3>Turning a noisy backlog into shipped change</h3>
           <div class="field">
             <span class="field-label">Problem</span>
-            <span class="field-value">The CRM platform had real potential to cut technician workload, but no defined roadmap for getting there.</span>
+            <span class="field-value">Without someone validating impact and prioritising against engineering capacity, an improvement backlog turns into noise instead of progress.</span>
           </div>
           <div class="field">
             <span class="field-label">What I did</span>
-            <span class="field-value">Defined requirements for 10 AI features working directly with an external vendor on design and rollout planning.</span>
+            <span class="field-value">Owned the backlog and bi-weekly sprints with in-house and external engineers: validated the business case for each request, decided what to build next, and ran testing and release with stakeholders.</span>
+          </div>
+          <p class="result">80 changes and fixes shipped to production in six months, including a usability redesign that saved ~860 hours a year.</p>
+        </div>
+
+        <div class="case-card reveal">
+          <div class="case-top">
+            <span class="case-id mono">CASE-05</span>
+            <span class="case-tag">In rollout</span>
+          </div>
+          <h3>An AI roadmap for a 300-person organisation</h3>
+          <div class="field">
+            <span class="field-label">Problem</span>
+            <span class="field-value">The organisation's core platform had real potential to cut manual work with AI, but no defined roadmap for getting there.</span>
+          </div>
+          <div class="field">
+            <span class="field-label">What I did</span>
+            <span class="field-value">Defined requirements for 10 AI features, including case classification, summarisation and workflow automation, working directly with an external technology vendor on design and rollout planning.</span>
           </div>
         </div>
       </div>
@@ -804,17 +909,12 @@
         <div class="timeline-item">
           <p class="timeline-date">2019 — 2024</p>
           <h3>Meta · Enterprise Support Technician</h3>
-          <p>Frontline IT support across a global enterprise helpdesk, including the research that helped build the case for our Salesforce Service Cloud migration.</p>
+          <p>Frontline support for a global enterprise, then acting systems analyst and team lead from 2023: redesigning processes, running testing and helping build the case for a move to Salesforce Service Cloud.</p>
         </div>
         <div class="timeline-item">
-          <p class="timeline-date">2024 — 2025</p>
-          <h3>Meta · Enterprise Support Technician, acting Business Systems Analyst</h3>
-          <p>Took on Business Systems Analyst responsibilities for the Helpdesk ahead of an official title change — managing the improvement backlog and writing business requirements for major changes.</p>
-        </div>
-        <div class="timeline-item">
-          <p class="timeline-date">2025 — Present</p>
+          <p class="timeline-date">2024 — 2026</p>
           <h3>Meta · Business Systems Analyst</h3>
-          <p>Owning systems strategy, requirements and delivery for a ~300-person enterprise support organisation, spanning platform, identity, AI and automation.</p>
+          <p>Owned requirements, backlog and delivery for the core platform of a 300+ person global organisation, spanning AI features, automation, process redesign and security.</p>
         </div>
       </div>
     </div>
@@ -825,10 +925,31 @@
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Capabilities</p>
-        <h2>What I bring to a project.</h2>
+        <h2>Tools and techniques.</h2>
       </div>
 
       <div class="skills-grid reveal">
+        <div class="skill-group">
+          <span class="label">Requirements &amp; Design</span>
+          <div class="tag-list">
+            <span class="tag">Process mapping</span>
+            <span class="tag">BRDs</span>
+            <span class="tag">User stories</span>
+            <span class="tag">Gap analysis</span>
+            <span class="tag">Build vs buy</span>
+            <span class="tag">Vendor evaluation</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <span class="label">Data &amp; Analytics</span>
+          <div class="tag-list">
+            <span class="tag">SQL</span>
+            <span class="tag">GraphQL</span>
+            <span class="tag">AI-assisted analysis</span>
+            <span class="tag">Impact &amp; ROI modelling</span>
+            <span class="tag">Quantified business cases</span>
+          </div>
+        </div>
         <div class="skill-group">
           <span class="label">Automation &amp; AI</span>
           <div class="tag-list">
@@ -840,48 +961,31 @@
           </div>
         </div>
         <div class="skill-group">
-          <span class="label">Platform &amp; Cloud</span>
-          <div class="tag-list">
-            <span class="tag">Salesforce Service Cloud</span>
-            <span class="tag">Lightning</span>
-            <span class="tag">Google Workspace</span>
-            <span class="tag">Cloud app deployment</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <span class="label">Identity &amp; Security</span>
-          <div class="tag-list">
-            <span class="tag">IAM requirements</span>
-            <span class="tag">SSO workflows</span>
-            <span class="tag">Identity verification</span>
-            <span class="tag">Vendor evaluation</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <span class="label">Data &amp; Analytics</span>
-          <div class="tag-list">
-            <span class="tag">GraphQL</span>
-            <span class="tag">AI-assisted analysis</span>
-            <span class="tag">Impact modelling</span>
-            <span class="tag">Quantified business cases</span>
-          </div>
-        </div>
-        <div class="skill-group">
           <span class="label">Delivery</span>
           <div class="tag-list">
             <span class="tag">Sprint management</span>
             <span class="tag">Backlog prioritisation</span>
             <span class="tag">UAT</span>
+            <span class="tag">Launch &amp; hypercare</span>
             <span class="tag">Stakeholder alignment</span>
           </div>
         </div>
         <div class="skill-group">
-          <span class="label">Requirements &amp; Design</span>
+          <span class="label">Change &amp; Adoption</span>
           <div class="tag-list">
-            <span class="tag">BRDs</span>
-            <span class="tag">Process mapping</span>
-            <span class="tag">User stories</span>
-            <span class="tag">Gap analysis</span>
+            <span class="tag">Demos &amp; training</span>
+            <span class="tag">AI maturity frameworks</span>
+            <span class="tag">Leadership updates</span>
+            <span class="tag">Mentoring</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <span class="label">Platforms</span>
+          <div class="tag-list">
+            <span class="tag">Salesforce Service Cloud</span>
+            <span class="tag">Google Workspace</span>
+            <span class="tag">Cloud app deployment</span>
+            <span class="tag">IAM &amp; SSO workflows</span>
           </div>
         </div>
       </div>
@@ -893,8 +997,8 @@
     <div class="wrap">
       <div class="reveal">
         <p class="eyebrow">Get in touch</p>
-        <h2>Have a system that needs fixing?</h2>
-        <p>I'm currently open to new opportunities — contract, consulting, or full-time. If a helpdesk, ITSM platform or internal tool has outgrown how it was originally built, I'd like to hear about it.</p>
+        <h2>Is your team stuck in manual work?</h2>
+        <p>I'm open to new opportunities: full-time, contract or consulting. If you have a process that's outgrown how it was built, or want AI to move beyond experiments into everyday work, I'd like to hear about it.</p>
       </div>
       <div class="contact-card reveal">
         <div class="row"><span>Email</span><a href="mailto:adamswaine1991@icloud.com">adamswaine1991@icloud.com</a></div>
