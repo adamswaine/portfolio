@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adam Swaine — Off the clock</title>
+<meta name="description" content="The personal side of Adam Swaine: games he loves, and games he makes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<script>(function(){document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'dark');})()</script>
+<style>
+  /* Same tokens as index.html, but this page leads with the warm amber instead of green */
+  :root{
+    --ink:#151A21;
+    --paper:#F4F6F8;
+    --surface:#FFFFFF;
+    --slate:#5B6472;
+    --line:#E1E5EA;
+    --accent:#C97B2E;
+    --accent-dim:#F7E9DA;
+    --green:#1F7A5C;
+    --radius:16px;
+    --container:960px;
+    --nav-bg:rgba(244,246,248,0.92);
+  }
+
+  html[data-theme="dark"]{
+    --ink:#DDE3EA;
+    --paper:#0D1117;
+    --surface:#161B22;
+    --slate:#8B95A3;
+    --line:#21282F;
+    --accent:#E09A4F;
+    --accent-dim:#2E2114;
+    --green:#34C48A;
+    --nav-bg:rgba(13,17,23,0.92);
+  }
+
+  @media (prefers-color-scheme: dark){
+    html:not([data-theme="light"]){
+      --ink:#DDE3EA;
+      --paper:#0D1117;
+      --surface:#161B22;
+      --slate:#8B95A3;
+      --line:#21282F;
+      --accent:#E09A4F;
+      --accent-dim:#2E2114;
+      --green:#34C48A;
+      --nav-bg:rgba(13,17,23,0.92);
+    }
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:17px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    transition:background 0.25s ease, color 0.25s ease;
+  }
+
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  :focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+    border-radius:3px;
+  }
+
+  .wrap{
+    max-width:var(--container);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  .pixel{
+    font-family:'Press Start 2P', monospace;
+    font-size:0.62rem;
+    letter-spacing:0.04em;
+    line-height:1.8;
+    color:var(--accent);
+    margin:0 0 18px;
+  }
+
+  h1,h2,h3{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+
+  p{margin:0;}
+  p + p{margin-top:16px;}
+
+  section{padding:80px 0;}
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--nav-bg);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  header.nav .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:18px;
+    padding-bottom:18px;
+  }
+  .brand{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    font-size:0.95rem;
+    letter-spacing:0.04em;
+    color:var(--ink);
+  }
+  .brand span{color:var(--accent);}
+  .brand:hover{text-decoration:none;}
+  nav.links{
+    display:flex;
+    gap:30px;
+    align-items:center;
+  }
+  nav.links a{
+    color:var(--ink);
+    font-size:0.92rem;
+    font-weight:500;
+  }
+  nav.links a:hover{color:var(--accent); text-decoration:none;}
+  nav.links a.cta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.82rem;
+    border:1px solid var(--ink);
+    padding:8px 16px;
+    border-radius:999px;
+    transition:background 0.15s ease, color 0.15s ease;
+  }
+  nav.links a.cta:hover{background:var(--ink); color:var(--paper);}
+
+  /* ---------- HERO ---------- */
+  .hero{padding-top:88px; padding-bottom:56px;}
+  .hero h1{
+    font-size:clamp(2.2rem, 4.4vw, 3.2rem);
+    line-height:1.1;
+    margin-bottom:22px;
+  }
+  .hero .lede{
+    font-size:1.12rem;
+    color:var(--slate);
+    max-width:600px;
+  }
+
+  /* ---------- PROJECTS ---------- */
+  .projects{padding-top:24px;}
+  .projects h2{
+    font-size:clamp(1.6rem, 2.8vw, 2.1rem);
+    margin-bottom:18px;
+  }
+  .projects .intro{max-width:640px; color:var(--slate); margin-bottom:32px;}
+  .project{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:32px;
+  }
+  .project-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+    margin-bottom:14px;
+  }
+  .project h3{font-size:1.3rem;}
+  .badge{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--accent);
+    background:var(--accent-dim);
+    padding:4px 10px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+  .project p{color:var(--ink);}
+  .feature-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px 28px;
+    margin-top:24px;
+  }
+  .feature-grid h4{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.74rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 8px;
+  }
+  .feature-grid ul{
+    margin:0;
+    padding-left:18px;
+    font-size:0.93rem;
+  }
+  .feature-grid li{margin-bottom:6px;}
+  .feature-grid li::marker{color:var(--accent);}
+  .project .fun-facts{
+    margin-top:22px;
+    padding-top:18px;
+    border-top:1px solid var(--line);
+    font-size:0.95rem;
+    color:var(--green);
+    font-weight:500;
+  }
+  .tag-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:18px;
+  }
+  .tag{
+    font-size:0.8rem;
+    border:1px solid var(--line);
+    background:var(--paper);
+    padding:5px 12px;
+    border-radius:999px;
+    color:var(--slate);
+  }
+
+  .project + .project{margin-top:24px;}
+  .shots{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin:0 0 22px;
+  }
+  .shots figure{margin:0;}
+  .shots img{
+    display:block;
+    width:100%;
+    aspect-ratio:16 / 9;
+    object-fit:cover;
+    border-radius:10px;
+    border:1px solid var(--line);
+  }
+  .shots figcaption{
+    font-size:0.8rem;
+    color:var(--slate);
+    margin-top:6px;
+  }
+  .shots.pixel-art img{image-rendering:pixelated;}
+
+  .back-link{
+    margin-top:40px;
+    font-size:0.95rem;
+    color:var(--slate);
+  }
+
+  footer{padding:30px 0 50px; border-top:1px solid var(--line);}
+  footer .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    color:var(--slate);
+  }
+
+  /* ---------- DARK MODE TOGGLE ---------- */
+  .theme-toggle{
+    background:none;
+    border:1px solid var(--line);
+    border-radius:999px;
+    width:36px;
+    height:36px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    color:var(--ink);
+    transition:border-color 0.2s ease, background 0.2s ease;
+    flex-shrink:0;
+  }
+  .theme-toggle:hover{background:var(--line);}
+  .theme-toggle svg{width:16px;height:16px;display:block;}
+  .icon-sun{display:none;}
+  .icon-moon{display:block;}
+  html[data-theme="dark"] .icon-sun{display:block;}
+  html[data-theme="dark"] .icon-moon{display:none;}
+  @media (prefers-color-scheme: dark){
+    html:not([data-theme="light"]) .icon-sun{display:block;}
+    html:not([data-theme="light"]) .icon-moon{display:none;}
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:640px){
+    section{padding:56px 0;}
+    nav.links a:not(.cta){display:none;}
+    nav.links{gap:12px;}
+    .shots{grid-template-columns:1fr;}
+    .feature-grid{grid-template-columns:1fr;}
+    .project{padding:24px;}
+    .project-top{flex-direction:column; align-items:flex-start;}
+    footer .wrap{flex-direction:column; gap:10px; align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">ADAM<span>·</span>SWAINE</a>
+    <nav class="links">
+      <a href="#projects">Projects</a>
+      <a href="index.html" class="cta">← Work stuff</a>
+      <button class="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="pixel">PLAYER 1 · OFF THE CLOCK</p>
+      <h1>Hi, I'm Adam. Outside work, gaming is a passion.</h1>
+      <p class="lede">Gaming really took off for me with Halo on the original Xbox, and more recently the Destiny franchise. I still play most days with my wife and friends. Lately I've been trying to turn ideas I have into my own real games. Here's what I'm working on.</p>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <div class="wrap">
+      <p class="pixel">NOW BUILDING</p>
+      <h2>Things I'm making for fun.</h2>
+      <p class="intro">AI helps me build faster, but I'm careful about where it goes. Wherever I can, I pay real artists for assets, textures and sound, buying packs from independent creators instead of generating everything.</p>
+
+      <div class="project">
+        <div class="project-top">
+          <h3>Swaine's Farm 🌾</h3>
+          <span class="badge">Still growing</span>
+        </div>
+        <div class="shots pixel-art">
+          <figure>
+            <img src="images/swaines-farm-overview.png" alt="Swaine's Farm from above: farmhouse, windmill, barn with animals, a pond and a garden plot" loading="lazy">
+            <figcaption>The whole farm, around level 25.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/swaines-farm-garden.png" alt="Two player characters outside the farmhouse, with cats, bees and flowerbeds" loading="lazy">
+            <figcaption>Us two outside the farmhouse, cats included.</figcaption>
+          </figure>
+        </div>
+        <p>I made this as a surprise for my wife, Tish. I wanted a fun way to keep on top of everyday life (exercise, chores, medication, date nights) without another to-do app, so I built us a whole game and companion app instead.</p>
+        <p>It's a two-player pixel-art farming game where real life is the controller. Every task we log earns XP, and over about two months that XP grows a shared farm from a few chickens into a working homestead.</p>
+
+        <div class="feature-grid">
+          <div>
+            <h4>The real-life loop</h4>
+            <ul>
+              <li>A daily board of small quests, streaks, and weekly couple goals</li>
+              <li>One-tap routines like "Morning" and "Cat care", plus a teamwork bonus when we both log</li>
+              <li>Exercise counts as kilometres on a virtual journey from home to Paris and on to Rome, with postcards along the way</li>
+              <li>Badge ladders for health, exercise, chores, goals and time together</li>
+            </ul>
+          </div>
+          <div>
+            <h4>The farm</h4>
+            <ul>
+              <li>Animals, a barn and a windmill that arrive as the farm levels up, plus a garden that grows a day for every day we log</li>
+              <li>Fishing, cooking, foraging, bug catching, stargazing, and a rowing boat for the pond</li>
+              <li>A world map with five more places to unlock, each with its own fish, locals and puzzle</li>
+              <li>A shop, a wardrobe full of hats and armour, and decorating the house and farm however we like</li>
+            </ul>
+          </div>
+          <div>
+            <h4>The personal touches</h4>
+            <ul>
+              <li>Our four real cats live on the farm, and every task we log earns a jigsaw piece of a photo of one of them</li>
+              <li>Riddler (the cat in the bow tie) leaves treasure-hunt riddles hidden around the farm</li>
+              <li>Secret places to discover, Halloween, Christmas, spring and summer events, and a birthday week just for Tish</li>
+              <li>Hayley, the farm's previous owner, shows you around and keeps you up to date</li>
+            </ul>
+          </div>
+          <div>
+            <h4>How it's built</h4>
+            <ul>
+              <li>Built in Godot, running in the browser, and hosted on our home server in Docker</li>
+              <li>One shared farm across both phones and the PC, with live presence (you see each other walking around) and a three-way merge so saves never clash</li>
+              <li>A companion phone app for logging tasks in seconds, which works offline and includes an "Ask Claude" button to size up new tasks</li>
+              <li>Character portraits made with a local AI image pipeline (ComfyUI), paid pixel-art packs, and CC0 music and sound</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="fun-facts">30 farm levels · 39 unlocks · 7 treasure hunts · 2 very demanding playtesters · 4 cats</p>
+        <div class="tag-list">
+          <span class="tag">Godot / GDScript</span>
+          <span class="tag">Python</span>
+          <span class="tag">Docker on Unraid</span>
+          <span class="tag">ComfyUI</span>
+          <span class="tag">Pixel art</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-top">
+          <h3>Movie Madness 🍿</h3>
+          <span class="badge">In development</span>
+        </div>
+        <div class="shots">
+          <figure>
+            <img src="images/movie-madness-menu.jpg" alt="Movie Madness main menu: a neon-lit cinema on a city street at night" loading="lazy">
+            <figcaption>Now showing: chaos.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/movie-madness-lobby.jpg" alt="The cinema lobby, with a concessions counter and arcade machines" loading="lazy">
+            <figcaption>The lobby, with concessions and an arcade.</figcaption>
+          </figure>
+        </div>
+        <p>A low-poly online multiplayer chaos game set in an old-school cinema, with two teams working against each other.</p>
+        <p>The <strong>Watchers</strong> score points by causing as much trouble as they can during the film: throwing popcorn, kicking seats, shining their phones and shouting gibberish at the screen. The <strong>Ushers</strong> patrol the dark with torches, listening for noise and trying to catch them in the act. Get caught too often and you're picked up and carried out over everyone's heads. Watchers can fight back by tripping an Usher who gets too close, but that gives them away.</p>
+        <p>The film streams live onto the big screen for every player, and the lobby has concessions and working arcade machines to play between rounds.</p>
+        <div class="tag-list">
+          <span class="tag">Unity / C#</span>
+          <span class="tag">Online multiplayer</span>
+          <span class="tag">Live video streaming</span>
+          <span class="tag">Low poly</span>
+          <span class="tag">Team vs team</span>
+        </div>
+      </div>
+
+      <p class="back-link">Looking for the professional side? <a href="index.html">Here's my work portfolio →</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>ADAM SWAINE — LONDON, UK</span>
+    <span>© 2026</span>
+  </div>
+</footer>
+
+<script>
+  // Dark mode toggle — shares the same localStorage key as index.html
+  const html = document.documentElement;
+  document.querySelector('.theme-toggle').addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+</script>
+
+</body>
+</html>
