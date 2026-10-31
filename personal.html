@@ -262,7 +262,7 @@
     color:var(--slate);
     margin-top:6px;
   }
-  .shots.pixel-art img{image-rendering:pixelated;}
+  .shots.pixel-art img:not(.smooth){image-rendering:pixelated;}
   .shots.phone{grid-template-columns:repeat(2,minmax(0,240px));}
   .shots.phone img{aspect-ratio:9 / 16; object-position:top;}
 
@@ -365,8 +365,8 @@
             <figcaption>The whole farm, around level 25.</figcaption>
           </figure>
           <figure>
-            <img src="images/swaines-farm-garden.png" alt="Two player characters outside the farmhouse, with cats, bees and flowerbeds" loading="lazy">
-            <figcaption>Us two outside the farmhouse, cats included.</figcaption>
+            <img class="smooth" src="images/swaines-farm-game-and-app.jpg" alt="The farm at level 2 next to the companion phone app, showing a Level up! pop-up and one-tap health tasks" loading="lazy">
+            <figcaption>The game and its companion app, levelling up together.</figcaption>
           </figure>
         </div>
         <p>I made this as a surprise for my wife, Tish. I wanted a fun way to keep on top of everyday life (exercise, chores, medication, date nights) without another to-do app, so I built us a whole game and companion app instead.</p>
