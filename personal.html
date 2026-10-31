@@ -263,6 +263,8 @@
     margin-top:6px;
   }
   .shots.pixel-art img{image-rendering:pixelated;}
+  .shots.phone{grid-template-columns:repeat(2,minmax(0,240px));}
+  .shots.phone img{aspect-ratio:9 / 16; object-position:top;}
 
   .back-link{
     margin-top:40px;
@@ -312,6 +314,7 @@
     nav.links a:not(.cta){display:none;}
     nav.links{gap:12px;}
     .shots{grid-template-columns:1fr;}
+    .shots.phone{grid-template-columns:1fr 1fr;}
     .feature-grid{grid-template-columns:1fr;}
     .project{padding:24px;}
     .project-top{flex-direction:column; align-items:flex-start;}
@@ -420,28 +423,48 @@
 
       <div class="project">
         <div class="project-top">
-          <h3>Movie Madness 🍿</h3>
-          <span class="badge">In development</span>
+          <h3>Health Log 💪</h3>
+          <span class="badge">Early development</span>
         </div>
-        <div class="shots">
+        <div class="shots phone">
           <figure>
-            <img src="images/movie-madness-menu.jpg" alt="Movie Madness main menu: a neon-lit cinema on a city street at night" loading="lazy">
-            <figcaption>Now showing: chaos.</figcaption>
+            <img src="images/health-log-exercise.jpg" alt="Health Log on a phone: the Flat Bench Press screen suggesting set 1 of 4 at 35 kg for 8 reps" loading="lazy">
+            <figcaption>One exercise per screen, with today's target.</figcaption>
           </figure>
           <figure>
-            <img src="images/movie-madness-lobby.jpg" alt="The cinema lobby, with a concessions counter and arcade machines" loading="lazy">
-            <figcaption>The lobby, with concessions and an arcade.</figcaption>
+            <img src="images/health-log-food.jpg" alt="Health Log's Food tab: today's calories and protein against target, with suggested meals for the rest of the day" loading="lazy">
+            <figcaption>Food, with meal ideas for the rest of the day.</figcaption>
           </figure>
         </div>
-        <p>A low-poly online multiplayer chaos game set in an old-school cinema, with two teams working against each other.</p>
-        <p>The <strong>Watchers</strong> score points by causing as much trouble as they can during the film: throwing popcorn, kicking seats, shining their phones and shouting gibberish at the screen. The <strong>Ushers</strong> patrol the dark with torches, listening for noise and trying to catch them in the act. Get caught too often and you're picked up and carried out over everyone's heads. Watchers can fight back by tripping an Usher who gets too close, but that gives them away.</p>
-        <p>The film streams live onto the big screen for every player, and the lobby has concessions and working arcade machines to play between rounds.</p>
+        <p>A phone app for the gym and for food, built so I'd stop keeping workouts in my notes app. It's still early days, but I'm already using it for every session.</p>
+        <p>It remembers what I lifted last time and suggests the weight and reps for each set (progressive overload), so I don't have to work it out between sets. On the food side, it tracks calories and protein against a daily target, then suggests meals from our own recipes to fill the rest of the day.</p>
+
+        <div class="feature-grid">
+          <div>
+            <h4>Training</h4>
+            <ul>
+              <li>Push / pull / legs rotation that knows which workout is next</li>
+              <li>Set-by-set suggestions that go up, hold or drop depending on how the last set went, plus personal record alerts</li>
+              <li>Exercise photos and how-to steps, and a "machine busy?" button that swaps in an alternative for the same muscles</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Food</h4>
+            <ul>
+              <li>Separate profiles for me and Tish, each with their own target</li>
+              <li>Barcode scanning, with label values from Open Food Facts</li>
+              <li>A shared kitchen list, and meal ideas from Claude based on what we like and what's actually in the cupboard</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>Weigh-ins come straight from our smart scale through Apple Health, and it runs on our home server like Swaine's Farm, with updates deployed automatically whenever the tests pass.</p>
         <div class="tag-list">
-          <span class="tag">Unity / C#</span>
-          <span class="tag">Online multiplayer</span>
-          <span class="tag">Live video streaming</span>
-          <span class="tag">Low poly</span>
-          <span class="tag">Team vs team</span>
+          <span class="tag">Python</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">Claude API</span>
+          <span class="tag">Docker on Unraid</span>
         </div>
       </div>
 
